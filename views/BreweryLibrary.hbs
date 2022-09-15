@@ -1,0 +1,80 @@
+<style>
+    html,
+    body{
+        font-family: Arial;
+        background-color: rgb(198, 142, 86);
+    }
+    .location{
+        display: flex;
+    }
+    .location h3{
+        margin-right: 5px
+    }
+    .breweryLink{
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: lightblue;
+        text-decoration: none;
+        padding: 5px 15px;
+        color: black
+    }
+    .beerGuy{
+        position: fixed;
+        right: 0%;
+        margin-top: 0 auto;
+        height: 70%;
+        width: 45%
+    }
+    #library {
+        margin-top: 5%;
+    }
+    #alph{
+        margin-top: 5%
+    }
+</style>
+
+<div id="library">
+<a id="alph" href="/brewLibrary/A">A</a>
+<a href="/brewLibrary/B">B</a>
+<a href="/brewLibrary/C">C</a>
+<a href="/brewLibrary/D">D</a>
+<a href="/brewLibrary/E">E</a>
+<a href="/brewLibrary/F">F</a>
+<a href="/brewLibrary/G">G</a>
+<a href="/brewLibrary/H">H</a>
+<a href="/brewLibrary/I">I</a>
+<a href="/brewLibrary/J">J</a>
+<a href="/brewLibrary/K">K</a>
+<a href="/brewLibrary/L">L</a>
+<a href="/brewLibrary/M">M</a>
+<a href="/brewLibrary/N">N</a>
+<a href="/brewLibrary/O">O</a>
+<a href="/brewLibrary/P">P</a>
+<a href="/brewLibrary/Q">Q</a>
+<a href="/brewLibrary/R">R</a>
+<a href="/brewLibrary/S">S</a>
+<a href="/brewLibrary/T">T</a>
+<a href="/brewLibrary/U">U</a>
+<a id='alph'href="/brewLibrary/V">V</a>
+<a href="/brewLibrary/W">W</a>
+<a href="/brewLibrary/X">X</a>
+<a href="/brewLibrary/Y">Y</a>
+<a href="/brewLibrary/Z">Z</a>
+</div>
+
+<h1>All Breweries</h1>
+<img class="beerGuy" src="/images/guyEnjoyingBeer.png"/>
+{{#each breweries}}
+<h2>{{this.name}}</h2>
+<div class="location">
+<h3>{{this.city}},</h3><br>
+{{#if this.state}}
+<h3>{{this.state}},</h3>
+{{/if}}
+<h3>{{this.country}}</h3>
+</div>
+{{#if this.website_url}}
+<a class='breweryLink' href="{{this.website_url}}">{{this.name}}'s Website</a>
+{{/if}}
+{{/each}}
+

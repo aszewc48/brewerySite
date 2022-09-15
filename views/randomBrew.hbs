@@ -1,0 +1,45 @@
+<style>
+    html,
+    body{
+        font-family: Arial;
+        background-color: rgb(198, 142, 86);
+    }
+    .location{
+        display: flex;
+    }
+    .location h3{
+        margin-right: 5px
+    }
+    .breweryLink{
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: lightblue;
+        text-decoration: none;
+        padding: 5px 15px;
+        color: black
+    }
+    .beerGuy{
+        position: fixed;
+        right: 0%;
+        margin-top: 0 auto;
+        height: 70%;
+        width: 45%
+    }
+</style>
+
+<h1>Random Brewery</h1>
+<img class="beerGuy" src="/images/guyEnjoyingBeer.png"/>
+
+<h2>{{ranBreweries.name}}</h2>
+<div class="location">
+<h3>{{ranBreweries.city}}, </h3>
+{{#if ranBreweries.state}}
+<h3>{{ranBreweries.state}}, </h3>
+{{/if}}
+<h3>{{ranBreweries.country}}</h3>
+</div>
+{{#if ranBreweries.website_url}}
+<a class='breweryLink' href="{{ranBreweries.website_url}}">{{ranBreweries.name}}'s Website</a>
+{{/if}}
+
+

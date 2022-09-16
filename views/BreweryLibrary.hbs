@@ -69,9 +69,11 @@
 <div class="location">
 <h3>{{this.city}},</h3><br>
 {{#if this.state}}
-<h3>{{this.state}},</h3>
+<h3>{{this.state}}</h3>
 {{/if}}
+{{#if this.country}}
 <h3>{{this.country}}</h3>
+{{/if}}
 </div>
 {{#if this.website_url}}
 <a class='breweryLink' href="{{this.website_url}}">{{this.name}}'s Website</a>
